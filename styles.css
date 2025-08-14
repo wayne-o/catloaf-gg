@@ -100,13 +100,14 @@ body {
 }
 
 .ticker-tape-content {
-    display: inline-block;
+    display: inline-flex;
     padding-left: 100%;
-    animation: ticker 30s linear infinite;
+    animation: ticker 45s linear infinite;
 }
 
 .ticker-tape-content span {
     padding: 0 20px;
+    white-space: nowrap;
 }
 
 .separator {
@@ -117,7 +118,6 @@ body {
     0% {
         transform: translate(0, 0);
     }
-
     100% {
         transform: translate(-50%, 0);
     }
