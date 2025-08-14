@@ -1,50 +1,89 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load Catloaf animation
-    const catloafAnimation = lottie.loadAnimation({
-        container: document.getElementById('catloaf-animation'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'Catloaf webface 03.json'
-    });
+    // Load Desktop Catloaf
+    if (document.getElementById('catloaf-animation')) {
+        lottie.loadAnimation({
+            container: document.getElementById('catloaf-animation'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'Catloaf webface 03.json'
+        });
+    }
 
-    // Load speech bubble animations
-    const driptradeAnimation = lottie.loadAnimation({
-        container: document.getElementById('driptrade-animation'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'SPEECHBUBBLE_DRIPTRADE.json'
-    });
+    // Load Mobile Catloaf  
+    if (document.getElementById('catloaf-animation-mobile')) {
+        lottie.loadAnimation({
+            container: document.getElementById('catloaf-animation-mobile'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'Catloaf webface 03.json'
+        });
+    }
+    
+    // Desktop animations
+    if (document.getElementById('driptrade-animation')) {
+        lottie.loadAnimation({
+            container: document.getElementById('driptrade-animation'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'SPEECHBUBBLE_DRIPTRADE.json'
+        });
+    }
 
-    const hellAnimation = lottie.loadAnimation({
-        container: document.getElementById('hell-animation'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'SPEECHBUBBLE_HELL.json'
-    });
+    if (document.getElementById('hell-animation')) {
+        lottie.loadAnimation({
+            container: document.getElementById('hell-animation'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'SPEECHBUBBLE_HELL.json'
+        });
+    }
 
-    const exchangeAnimation = lottie.loadAnimation({
-        container: document.getElementById('exchange-animation'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'SPEECHBUBBLE_HXFINANCE.json'
-    });
+    if (document.getElementById('exchange-animation')) {
+        lottie.loadAnimation({
+            container: document.getElementById('exchange-animation'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'SPEECHBUBBLE_HXFINANCE.json'
+        });
+    }
+    
+    // Mobile animations
+    if (document.getElementById('driptrade-animation-mobile')) {
+        lottie.loadAnimation({
+            container: document.getElementById('driptrade-animation-mobile'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'SPEECHBUBBLE_DRIPTRADE_MOBILE.json'
+        });
+    }
 
-    // Fallback text if animations don't load
-    setTimeout(() => {
-        if (!document.querySelector('#driptrade-animation svg')) {
-            document.getElementById('driptrade-animation').innerHTML = 'DRIPTRADE';
-        }
-        if (!document.querySelector('#hell-animation svg')) {
-            document.getElementById('hell-animation').innerHTML = 'HELL';
-        }
-        if (!document.querySelector('#exchange-animation svg')) {
-            document.getElementById('exchange-animation').innerHTML = 'EXCHANGE';
-        }
-    }, 3000);
+    if (document.getElementById('hell-animation-mobile')) {
+        lottie.loadAnimation({
+            container: document.getElementById('hell-animation-mobile'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'SPEECHBUBBLE_HELL_MOBILE.json'
+        });
+    }
+
+    if (document.getElementById('exchange-animation-mobile')) {
+        lottie.loadAnimation({
+            container: document.getElementById('exchange-animation-mobile'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'SPEECHBUBBLE_HXFINANCE_MOBILE.json'
+        });
+    }
+
+    // Fallback text removed - animations include the text
 
     // Add some interactivity - make bubbles bounce on hover
     const bubbles = document.querySelectorAll('.speech-bubble');
