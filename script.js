@@ -78,3 +78,14 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Windows 95 alert functions
+function showWin95Alert() {
+    const modal = document.getElementById('win95Modal');
+    modal.classList.add('show');
+}
+
+function closeWin95Alert() {
+    const modal = document.getElementById('win95Modal');
+    modal.classList.remove('show');
+}

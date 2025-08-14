@@ -15,8 +15,8 @@
 <body>
     <div class="container">
         <div class="animations-wrapper">
-            <div class="animation-bubble bubble-driptrade" id="driptrade-animation"></div>
-            <div class="animation-bubble bubble-hell" id="hell-animation"></div>
+            <div class="animation-bubble bubble-driptrade" id="driptrade-animation" onclick="showWin95Alert()"></div>
+            <a href="https://x.com/catloaf_hl" target="_blank" class="animation-bubble bubble-hell" id="hell-animation"></a>
             <a href="https://hx.finance" target="_blank" class="animation-bubble bubble-exchange"
                 id="exchange-animation"></a>
         </div>
@@ -56,6 +56,23 @@
             <span class="separator">•</span>
             <span>FUCK THE COMMUNITY</span>
             <span class="separator">•</span>
+        </div>
+    </div>
+
+    <!-- Windows 95 Style Alert Modal -->
+    <div id="win95Modal" class="win95-modal">
+        <div class="win95-window">
+            <div class="win95-title-bar">
+                <span>DripTrade</span>
+                <button class="win95-close" onclick="closeWin95Alert()">×</button>
+            </div>
+            <div class="win95-content">
+                <div class="win95-icon">!</div>
+                <div class="win95-message">Coming Soon</div>
+            </div>
+            <div class="win95-button-container">
+                <button class="win95-button" onclick="closeWin95Alert()">OK</button>
+            </div>
         </div>
     </div>
 
