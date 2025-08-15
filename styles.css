@@ -95,40 +95,41 @@ body {
     display: none;
 }
 
-.ticker-tape {
+/* Marquee */
+.marquee {
+    --gap: 2rem;
     background-color: white;
     color: black;
-    padding: 15px 0;
-    position: relative;
-    overflow: hidden;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 35px;
-    white-space: nowrap;
     border-top: 4px solid black;
+    padding: 15px 0;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
 }
 
-.ticker-tape-content {
-    display: inline-flex;
-    padding-left: 100%;
-    animation: ticker 45s linear infinite;
+.marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: var(--gap);
+    animation: scroll 20s linear infinite;
 }
 
-.ticker-tape-content span {
-    padding: 0 20px;
+.marquee__content span {
     white-space: nowrap;
 }
 
-.separator {
-    color: black;
-}
-
-@keyframes ticker {
-    0% {
-        transform: translate(0, 0);
+@keyframes scroll {
+    from {
+        transform: translateX(0);
     }
-    100% {
-        transform: translate(-50%, 0);
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
     }
 }
 
@@ -137,7 +138,7 @@ body {
     .desktop-only {
         display: block !important;
     }
-    
+
     .mobile-only {
         display: none !important;
     }
@@ -198,116 +199,100 @@ body {
     }
 }
 
-/* Windows 95 Style Modal */
-.win95-modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.2s;
-}
-
-.win95-modal.show {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.win95-window {
-    background: #c0c0c0;
-    border: 2px solid;
-    border-color: #ffffff #808080 #808080 #ffffff;
-    box-shadow: inset -1px -1px 0 #000000, inset 1px 1px 0 #dfdfdf;
-    width: 300px;
-    font-family: 'MS Sans Serif', Geneva, sans-serif;
-    font-size: 11px;
-}
-
-.win95-title-bar {
-    background: linear-gradient(to right, #000080, #1084d0);
-    color: white;
-    padding: 2px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 11px;
-}
-
-.win95-close {
-    width: 16px;
-    height: 14px;
-    background: #c0c0c0;
-    border: 1px solid;
-    border-color: #ffffff #000000 #000000 #ffffff;
-    font-size: 10px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.win95-close:active {
-    border-color: #000000 #ffffff #ffffff #000000;
-}
-
-.win95-content {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.win95-icon {
-    width: 32px;
-    height: 32px;
-    background: #ffff00;
-    border: 2px solid #000000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.win95-message {
-    flex: 1;
-    font-size: 11px;
-    color: #000000;
-}
-
-.win95-button-container {
-    padding: 10px 20px 20px;
-    text-align: center;
-}
-
-.win95-button {
-    background: #c0c0c0;
-    border: 2px solid;
-    border-color: #ffffff #000000 #000000 #ffffff;
-    padding: 4px 20px;
-    font-size: 11px;
-    cursor: pointer;
-    font-family: 'MS Sans Serif', Geneva, sans-serif;
-}
-
-.win95-button:active {
-    border-color: #000000 #ffffff #ffffff #000000;
-}
-
-.win95-button:focus {
-    outline: 1px dotted #000000;
-    outline-offset: -4px;
-}
+/* Removed Windows 95 modal styles - now using unified modal style */
 
 .bubble-driptrade {
     cursor: pointer;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* WTF Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px 50px;
+    max-width: 650px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: visible;
+    position: relative;
+    border: 5px solid black;
+    transform: skewX(-3deg) skewY(-2deg);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 1;
+    font-weight: bold;
+    transform: skewX(3deg) skewY(2deg);
+    z-index: 10;
+}
+
+.modal-content h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    transform: skewX(3deg) skewY(2deg);
+    text-align: center;
+}
+
+.modal-content p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    transform: skewX(3deg) skewY(2deg);
+}
+
+/* Mobile specific modal styles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .modal-content p {
+        font-size: 14px;
+    }
 }

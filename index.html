@@ -18,90 +18,80 @@
         <div class="flex-1 flex items-center justify-center p-4">
             <div class="relative w-full max-w-sm md:max-w-4xl">
                 <!-- Mobile Layout -->
-                <div class="md:hidden flex flex-col items-center justify-center" style="min-height: calc(100vh - 60px);">
-                    <!-- Mobile Speech Bubbles - Bigger and better positioned -->
-                    <div class="relative w-full max-w-sm h-80 -mb-12">
-                        <div class="absolute top-0 left-2 w-64 h-36 z-30" id="driptrade-animation-mobile" onclick="showWin95Alert()"></div>
-                        <a href="https://hx.finance" target="_blank" class="absolute top-20 right-0 w-64 h-36 z-20 block" id="exchange-animation-mobile"></a>
-                        <a href="https://x.com/catloaf_hl" target="_blank" class="absolute top-36 left-2 w-60 h-36 z-10 block" id="hell-animation-mobile"></a>
-                    </div>
-                    <!-- Mobile Catloaf - Bigger -->
-                    <div class="relative w-80 h-80">
-                        <div id="catloaf-animation-mobile" class="w-full h-full"></div>
-                    </div>
+                <div class="md:hidden flex items-center justify-center" style="min-height: calc(100vh - 60px);">
+                    <!-- Mobile Unified Animation (Portrait) -->
+                    <div id="catloaf-portrait" class="w-full h-full max-w-[400px]"></div>
                 </div>
 
                 <!-- Desktop Layout -->
-                <div class="hidden md:flex md:flex-col md:items-center md:justify-center" style="min-height: calc(100vh - 80px);">
-                    <div class="relative">
-                        <!-- Desktop Speech Bubbles positioned around catloaf -->
-                        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-80 h-40 z-10">
-                            <div id="hell-animation" class="w-full h-full"></div>
-                        </div>
-                        <a href="https://hx.finance" target="_blank" class="absolute top-0 -left-80 w-80 h-40 z-10 block">
-                            <div id="exchange-animation" class="w-full h-full"></div>
-                        </a>
-                        <div class="absolute top-0 -right-80 w-80 h-40 z-10" onclick="showWin95Alert()">
-                            <div id="driptrade-animation" class="w-full h-full"></div>
-                        </div>
-                        <!-- Desktop Catloaf -->
-                        <div class="relative w-[450px] h-[450px]">
-                            <div id="catloaf-animation" class="w-full h-full"></div>
-                        </div>
-                    </div>
+                <div class="hidden md:flex md:items-center md:justify-center" style="min-height: calc(100vh - 80px);">
+                    <!-- Desktop Unified Animation (Landscape) -->
+                    <div id="catloaf-landscape" class="w-full h-full max-w-[900px]"></div>
                 </div>
             </div>
         </div>
 
-    <div class="ticker-tape fixed bottom-0 w-full">
-        <div class="ticker-tape-content">
-            <span>YOUR FAVOURITE CARB-BASED WAR CRIMINAL!</span>
-            <span class="separator">•</span>
-            <span>FLUFFY. FURIOUS. FERMENTED.</span>
-            <span class="separator">•</span>
-            <span>CATLOAF: CARBS, CHAOS, CONTEMPT</span>
-            <span class="separator">•</span>
-            <span>KNEADED BY FATE. DRIVEN BY HATE</span>
-            <span class="separator">•</span>
-            <span>THE SKIES WILL BURN</span>
-            <span class="separator">•</span>
-            <span>CRUSTY ON THE OUTSIDE, DEAD INSIDE</span>
-            <span class="separator">•</span>
-            <span>YOUR FAVOURITE CARB-BASED WAR CRIMINAL!</span>
-            <span class="separator">•</span>
-            <span>FLUFFY. FURIOUS. FERMENTED</span>
-            <span class="separator">•</span>
-            <span>CATLOAF: CARBS, CHAOS, CONTEMPT</span>
-            <span class="separator">•</span>
-            <span>KNEADED BY FATE. DRIVEN BY HATE</span>
-            <span class="separator">•</span>
-            <span>THE SKIES WILL BURN</span>
-            <span class="separator">•</span>
-            <span>CRUSTY ON THE OUTSIDE, DEAD ON THE INSIDE</span>
-            <span class="separator">•</span>
-            <span>FUCK THE COMMUNITY</span>
-            <span class="separator">•</span>
-        </div>
-    </div>
-
-    <!-- Windows 95 Style Alert Modal -->
-    <div id="win95Modal" class="win95-modal">
-        <div class="win95-window">
-            <div class="win95-title-bar">
-                <span>DripTrade</span>
-                <button class="win95-close" onclick="closeWin95Alert()">×</button>
+        <div class="marquee fixed bottom-0 w-full">
+            <div class="marquee__content">
+                <span>YOUR FAVOURITE CARB-BASED WAR CRIMINAL!</span>
+                <span>•</span>
+                <span>FLUFFY. FURIOUS. FERMENTED.</span>
+                <span>•</span>
+                <span>CATLOAF: CARBS, CHAOS, CONTEMPT</span>
+                <span>•</span>
+                <span>KNEADED BY FATE. DRIVEN BY HATE</span>
+                <span>•</span>
+                <span>THE SKIES WILL BURN</span>
+                <span>•</span>
+                <span>CRUSTY ON THE OUTSIDE, DEAD ON THE INSIDE</span>
+                <span>•</span>
+                <span>FUCK THE COMMUNITY</span>
+                <span>•</span>
             </div>
-            <div class="win95-content">
-                <div class="win95-icon">!</div>
-                <div class="win95-message">Coming Soon</div>
-            </div>
-            <div class="win95-button-container">
-                <button class="win95-button" onclick="closeWin95Alert()">OK</button>
+            <div class="marquee__content" aria-hidden="true">
+                <span>YOUR FAVOURITE CARB-BASED WAR CRIMINAL!</span>
+                <span>•</span>
+                <span>FLUFFY. FURIOUS. FERMENTED.</span>
+                <span>•</span>
+                <span>CATLOAF: CARBS, CHAOS, CONTEMPT</span>
+                <span>•</span>
+                <span>KNEADED BY FATE. DRIVEN BY HATE</span>
+                <span>•</span>
+                <span>THE SKIES WILL BURN</span>
+                <span>•</span>
+                <span>CRUSTY ON THE OUTSIDE, DEAD ON THE INSIDE</span>
+                <span>•</span>
+                <span>FUCK THE COMMUNITY</span>
+                <span>•</span>
             </div>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <!-- DripTrade Modal -->
+        <div id="driptradeModal" class="modal-overlay" onclick="closeDriptradeModal(event)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeDriptradeModal()">×</button>
+                <h2>DripTrade</h2>
+                <p>Coming Soon</p>
+            </div>
+        </div>
+
+        <!-- WTF Modal -->
+        <div id="wtfModal" class="modal-overlay" onclick="closeWtfModal(event)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeWtfModal()">×</button>
+                <h2>What the fuck even is this?</h2>
+                <p>CATLOAF holders are fucking elite HX community members. Stack points like a degenerate before TGE
+                    with points multipliers. Pay less fees forever like a GOAT.
+
+                </p>
+                <p>REMEMBER: Watching the world burn as late stage capitalism leads to total societal breakdown knowing
+                    you have a CATLOAF NFT will take the edge off it all, trust us.
+                </p>
+                <p><b>Now fuck off, it's time for your lunchtime gin</b></p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
 </body>
 
 </html>
