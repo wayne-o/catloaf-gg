@@ -42,36 +42,32 @@ document.addEventListener('DOMContentLoaded', function () {
             hellLinkMobile.style.display = 'block';
             portraitLinks.appendChild(hellLinkMobile);
 
-            // HX Finance link area
-            const hxLinkMobile = document.createElement('a');
-            hxLinkMobile.href = 'https://hx.finance';
-            hxLinkMobile.target = '_blank';
-            hxLinkMobile.style.position = 'absolute';
-            hxLinkMobile.style.top = '15%';
-            hxLinkMobile.style.right = '10%';
-            hxLinkMobile.style.width = '50%';
-            hxLinkMobile.style.height = '10%';
-            hxLinkMobile.style.cursor = 'pointer';
-            hxLinkMobile.style.display = 'block';
-            portraitLinks.appendChild(hxLinkMobile);
+            // MerryMen link area
+            const merrymenLinkMobile = document.createElement('a');
+            merrymenLinkMobile.href = 'https://merrymen.wtf/';
+            merrymenLinkMobile.target = '_blank';
+            merrymenLinkMobile.style.position = 'absolute';
+            merrymenLinkMobile.style.top = '15%';
+            merrymenLinkMobile.style.right = '10%';
+            merrymenLinkMobile.style.width = '50%';
+            merrymenLinkMobile.style.height = '10%';
+            merrymenLinkMobile.style.cursor = 'pointer';
+            merrymenLinkMobile.style.display = 'block';
+            portraitLinks.appendChild(merrymenLinkMobile);
 
-            // DripTrade link area
-            const dripLinkMobile = document.createElement('a');
-            dripLinkMobile.href = '#';
-            dripLinkMobile.onclick = function (e) {
-                e.preventDefault();
-                showDriptradeModal();
-                return false;
-            };
-            dripLinkMobile.style.position = 'absolute';
-            dripLinkMobile.style.top = '0%';
-            dripLinkMobile.style.left = '40%';
-            dripLinkMobile.style.transform = 'translateX(-50%)';
-            dripLinkMobile.style.width = '50%';
-            dripLinkMobile.style.height = '15%';
-            dripLinkMobile.style.cursor = 'pointer';
-            dripLinkMobile.style.display = 'block';
-            portraitLinks.appendChild(dripLinkMobile);
+            // OpenSea link area
+            const openseaLinkMobile = document.createElement('a');
+            openseaLinkMobile.href = 'https://opensea.io/collection/merry-men-701196355';
+            openseaLinkMobile.target = '_blank';
+            openseaLinkMobile.style.position = 'absolute';
+            openseaLinkMobile.style.top = '0%';
+            openseaLinkMobile.style.left = '40%';
+            openseaLinkMobile.style.transform = 'translateX(-50%)';
+            openseaLinkMobile.style.width = '50%';
+            openseaLinkMobile.style.height = '15%';
+            openseaLinkMobile.style.cursor = 'pointer';
+            openseaLinkMobile.style.display = 'block';
+            portraitLinks.appendChild(openseaLinkMobile);
 
             // WTF? link area for mobile
             const wtfLinkMobile = document.createElement('a');
@@ -138,35 +134,31 @@ document.addEventListener('DOMContentLoaded', function () {
             hellLink.style.display = 'block';
             landscapeLinks.appendChild(hellLink);
 
-            // HX Finance link area (left bubble)
-            const hxLink = document.createElement('a');
-            hxLink.href = 'https://hx.finance';
-            hxLink.target = '_blank';
-            hxLink.style.position = 'absolute';
-            hxLink.style.top = '26%';
-            hxLink.style.left = '5%';
-            hxLink.style.width = '24%';
-            hxLink.style.height = '12%';
-            hxLink.style.cursor = 'pointer';
-            hxLink.style.display = 'block';
-            landscapeLinks.appendChild(hxLink);
+            // MerryMen link area (left bubble)
+            const merrymenLink = document.createElement('a');
+            merrymenLink.href = 'https://merrymen.wtf/';
+            merrymenLink.target = '_blank';
+            merrymenLink.style.position = 'absolute';
+            merrymenLink.style.top = '26%';
+            merrymenLink.style.left = '5%';
+            merrymenLink.style.width = '24%';
+            merrymenLink.style.height = '12%';
+            merrymenLink.style.cursor = 'pointer';
+            merrymenLink.style.display = 'block';
+            landscapeLinks.appendChild(merrymenLink);
 
-            // DripTrade link area (right bubble)
-            const dripLink = document.createElement('a');
-            dripLink.href = '#';
-            dripLink.onclick = function (e) {
-                e.preventDefault();
-                showDriptradeModal();
-                return false;
-            };
-            dripLink.style.position = 'absolute';
-            dripLink.style.top = '16%';
-            dripLink.style.right = '0%';
-            dripLink.style.width = '30%';
-            dripLink.style.height = '12%';
-            dripLink.style.cursor = 'pointer';
-            dripLink.style.display = 'block';
-            landscapeLinks.appendChild(dripLink);
+            // OpenSea link area (right bubble)
+            const openseaLink = document.createElement('a');
+            openseaLink.href = 'https://opensea.io/collection/merry-men-701196355';
+            openseaLink.target = '_blank';
+            openseaLink.style.position = 'absolute';
+            openseaLink.style.top = '16%';
+            openseaLink.style.right = '0%';
+            openseaLink.style.width = '30%';
+            openseaLink.style.height = '12%';
+            openseaLink.style.cursor = 'pointer';
+            openseaLink.style.display = 'block';
+            landscapeLinks.appendChild(openseaLink);
 
             // WTF? link area (top-center bubble)
             const wtfLink = document.createElement('a');
@@ -190,20 +182,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 500);
     }
 });
-
-// DripTrade Modal functions
-function showDriptradeModal() {
-    console.log('Showing DripTrade modal');
-    const modal = document.getElementById('driptradeModal');
-    modal.classList.add('show');
-}
-
-function closeDriptradeModal(event) {
-    if (!event || event.target.id === 'driptradeModal' || event.target.className === 'modal-close') {
-        const modal = document.getElementById('driptradeModal');
-        modal.classList.remove('show');
-    }
-}
 
 // WTF Modal functions
 function showWtfModal() {
